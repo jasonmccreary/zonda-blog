@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-class Post extends \Eloquent
+class Post extends Model
 {
     public $timestamps = true;
 
