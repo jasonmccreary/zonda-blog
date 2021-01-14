@@ -40,7 +40,7 @@ class Post extends Model
      */
     public function Author()
     {
-        return $this->belongsTo('App\User', 'author_id');
+        return $this->belongsTo(\App\User::class, 'author_id');
     }
 
     /**
