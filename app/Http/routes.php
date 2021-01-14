@@ -19,7 +19,7 @@ Route::get('login', ['as' => 'login', 'uses' => 'App\Controllers\Backend\AuthCon
 Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'App\Controllers\Backend\AuthController@postLogin']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'App\Controllers\Backend\AuthController@getLogout']);
 
-Route::group(['before' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'App\Controllers\Backend\DashboardController@index']);
     Route::get('post', ['as' => 'post', 'uses' => 'App\Controllers\Backend\PostController@index']);
     Route::get('post', ['as' => 'post', 'uses' => 'App\Controllers\Backend\PostController@index']);
