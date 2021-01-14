@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Services\PostService;
 use BaseController;
 use Illuminate\Database\QueryException;
-use Input;
+use Illuminate\Support\Facades\Request;
 use Redirect;
 use Response;
 use Validator;
@@ -75,12 +75,12 @@ class PostController extends Controller
     public function store()
     {
         try {
-            $validator = Validator::make(Input::all(), Post::$rules);
+            $validator = Validator::make(Request::all(), Post::$rules);
             if ($validator->fails()) {
                 $response['status'] = config('constants.ERROR');
                 $response['message'] = 'Please fill the required field.';
             } else {
-                $this->postService->save(Input::all());
+                $this->postService->save(Request::all());
                 $response['status'] = config('constants.SUCCESS');
                 $response['message'] = 'Post saved successfully.';
             }
@@ -99,12 +99,12 @@ class PostController extends Controller
     public function update()
     {
         try {
-            $validator = Validator::make(Input::all(), Post::$rules);
+            $validator = Validator::make(Request::all(), Post::$rules);
             if ($validator->fails()) {
                 $response['status'] = config('constants.ERROR');
                 $response['message'] = 'Please fill the required field.';
             } else {
-                $this->postService->update(Input::all());
+                $this->postService->update(Request::all());
                 $response['status'] = config('constants.SUCCESS');
                 $response['message'] = 'Post updated successfully.';
             }
