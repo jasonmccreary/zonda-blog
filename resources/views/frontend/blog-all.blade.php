@@ -6,15 +6,15 @@
     ?>
     @foreach ($posts as $post)
     <div class="post-preview">
-        <a href="{{ URL::route('detail', $post->id) }}">
+        <a href="{!! URL::route('detail', $post->id) !!}">
             <h2 class="post-title">
-                {{ $post->title }}
+                {!! $post->title !!}
             </h2>
             <h3 class="post-subtitle">
-                {{ $post->body }}
+                {!! $post->body !!}
             </h3>
         </a>
-        <p class="post-meta">Posted by <a href="#">{{ $post->author->name }}</a> on {{ date("jS F, Y", strtotime($post->created_at))}}</p>
+        <p class="post-meta">Posted by <a href="#">{!! $post->author->name !!}</a> on {!! date("jS F, Y", strtotime($post->created_at))!!}</p>
     </div>
     <?php if ($i !== $count): ?>
         <hr>

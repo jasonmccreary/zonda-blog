@@ -41,14 +41,14 @@
                         <?php $i = 1; ?>
                         @foreach ($posts as $post)
                         <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $post->author->name }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->created_at }}</td>
-                            <td>{{ $post->active_label }}</td>
+                            <td>{!! $i++ !!}</td>
+                            <td>{!! $post->author->name !!}</td>
+                            <td>{!! $post->title !!}</td>
+                            <td>{!! $post->created_at !!}</td>
+                            <td>{!! $post->active_label !!}</td>
                             <td style="text-align: center; ">
-                                <a href="/post/edit/{{ $post->id }}" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
-                                <a href="javascript:void(0)" title="Remove" class="post-delete-btn" data-toggle='modal' data-target='#post-confirm-modal'  data-id='{{ $post->id }}'><i class="glyphicon glyphicon-trash"></i></a>
+                                <a href="/post/edit/{!! $post->id !!}" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
+                                <a href="javascript:void(0)" title="Remove" class="post-delete-btn" data-toggle='modal' data-target='#post-confirm-modal'  data-id='{!! $post->id !!}'><i class="glyphicon glyphicon-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

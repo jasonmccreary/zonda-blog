@@ -10,8 +10,8 @@
         <meta name="author" content="">
 
         <title>Blog</title>
-        {{ HTML::style('common/css/bootstrap.min.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('frontend/css/clean-blog.min.css', array('rel' => 'stylesheet')) }}
+        {!! HTML::style('common/css/bootstrap.min.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('frontend/css/clean-blog.min.css', array('rel' => 'stylesheet')) !!}
 
         <!-- Custom Fonts -->
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -43,9 +43,9 @@
 
         @include('frontend.includes.footer')
 
-        {{ HTML::script('common/js/jquery-1.11.2.min.js') }}
-        {{ HTML::script('common/bootstrap/js/bootstrap.min.js') }}
-        {{ HTML::script('frontend/js/clean-blog.min.js') }}
+        {!! HTML::script('common/js/jquery-1.11.2.min.js') !!}
+        {!! HTML::script('common/bootstrap/js/bootstrap.min.js') !!}
+        {!! HTML::script('frontend/js/clean-blog.min.js') !!}
     </body>
 
 </html>

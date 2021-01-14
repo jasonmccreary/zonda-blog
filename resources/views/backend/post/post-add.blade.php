@@ -24,7 +24,7 @@
                 <div class="alert alert-error post-error-message" style="display: none"></div>
                 <div class="row">
                     <div class="col-xs-10">
-                        {{ Form::open(['class' => 'form-horizontal','id' => 'post-add-form', 'role' => 'form', 'method' => 'POST']) }}
+                        {!! Form::open(['class' => 'form-horizontal','id' => 'post-add-form', 'role' => 'form', 'method' => 'POST']) !!}
                         <div class="form-group">
                             <label for="title" class="control-label col-xs-3">Title</label>
                             <div class="col-xs-9">
@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="body" class="control-label col-xs-3">Content</label>
                             <div class="col-xs-9">
-                                {{ Form::textarea('body', '', array('id' => 'body', 'class' => 'form-control tinymce')) }}
+                                {!! Form::textarea('body', '', array('id' => 'body', 'class' => 'form-control tinymce')) !!}
                             </div>
                         </div>  
                         <div class="form-group">
@@ -60,7 +60,7 @@
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </div>
                         </div>
-                        {{ Form::close() }} 
+                        {!! Form::close() !!} 
                     </div>
                 </div>
             </div><!-- /.box-body --> 

@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                {{ HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'img-circle')) }}
+                {!! HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'img-circle')) !!}
             </div>
             <div class="pull-left info">
-                <p>{{ Auth::user()->name }}</p>
+                <p>{!! Auth::user()->name !!}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>

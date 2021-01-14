@@ -10,14 +10,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
-        {{ HTML::style('common/css/bootstrap.min.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/ionicons.min.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/AdminLTE.min.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/jquery-ui.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/skins/_all-skins.min.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/js/plugins/datatables/dataTables.bootstrap.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/style.css', array('rel' => 'stylesheet')) }}
-        {{ HTML::style('backend/css/icon.css', array('rel' => 'stylesheet')) }}
+        {!! HTML::style('common/css/bootstrap.min.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/ionicons.min.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/AdminLTE.min.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/jquery-ui.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/skins/_all-skins.min.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/js/plugins/datatables/dataTables.bootstrap.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/style.css', array('rel' => 'stylesheet')) !!}
+        {!! HTML::style('backend/css/icon.css', array('rel' => 'stylesheet')) !!}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,18 +51,18 @@
 
         </div><!-- ./wrapper -->
 
-        {{  HTML::script("common/js/jquery-1.11.2.min.js") }}  
-        {{  HTML::script("common/bootstrap/js/bootstrap.min.js") }}
-        {{  HTML::script("backend/js/theme/app.min.js") }}
+        {!!  HTML::script("common/js/jquery-1.11.2.min.js") !!}  
+        {!!  HTML::script("common/bootstrap/js/bootstrap.min.js") !!}
+        {!!  HTML::script("backend/js/theme/app.min.js") !!}
 
-        {{  HTML::script("backend/js/plugins/jQueryUI/jquery-ui.min.js") }}
-        {{  HTML::script("backend/js/plugins/datatables/jquery.dataTables.min.js") }}
-        {{  HTML::script("backend/js/plugins/datatables/dataTables.bootstrap.min.js") }}
-        {{  HTML::script("backend/js/tinymce/tinymce.min.js") }}
-        {{  HTML::script("common/js/jquery.validate.min.js") }}  
-        {{  HTML::script("backend/js/utils/common.js") }}
-        {{  HTML::script("backend/js/post/post.js") }}
-        {{  HTML::script("backend/js/post/postList.js") }}
-        {{  HTML::script("backend/js/utils/tinyImpl.js") }}
+        {!!  HTML::script("backend/js/plugins/jQueryUI/jquery-ui.min.js") !!}
+        {!!  HTML::script("backend/js/plugins/datatables/jquery.dataTables.min.js") !!}
+        {!!  HTML::script("backend/js/plugins/datatables/dataTables.bootstrap.min.js") !!}
+        {!!  HTML::script("backend/js/tinymce/tinymce.min.js") !!}
+        {!!  HTML::script("common/js/jquery.validate.min.js") !!}  
+        {!!  HTML::script("backend/js/utils/common.js") !!}
+        {!!  HTML::script("backend/js/post/post.js") !!}
+        {!!  HTML::script("backend/js/post/postList.js") !!}
+        {!!  HTML::script("backend/js/utils/tinyImpl.js") !!}
     </body>
 </html>

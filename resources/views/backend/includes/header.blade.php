@@ -21,15 +21,15 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        {{ HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'user-image')) }}
-                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                        {!! HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'user-image')) !!}
+                        <span class="hidden-xs">{!! Auth::user()->name !!}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            {{ HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'img-circle')) }}
+                            {!! HTML::image('backend/img/avatar5.png', 'User Image', array('class' => 'img-circle')) !!}
                             <p>
-                                {{ Auth::user()->name }}
+                                {!! Auth::user()->name !!}
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -38,7 +38,7 @@
                                 <a href="/profile" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ URL::to('logout') }}" class="btn btn-default btn-flat">Log out</a>
+                                <a href="{!! URL::to('logout') !!}" class="btn btn-default btn-flat">Log out</a>
                             </div>
                         </li>
                     </ul>
