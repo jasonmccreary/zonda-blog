@@ -9,11 +9,8 @@ use Illuminate\Support\ServiceProvider;
  */
 class BlogServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
-
         $this->app->bind('App\Repositories\Post\PostContract', 'App\Repositories\Post\EloquentPostRepository');
     }
-
 }

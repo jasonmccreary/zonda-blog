@@ -2,17 +2,15 @@
 
 namespace App\Services;
 
-use App\Repositories\Post\PostContract;
 use App\Exceptions\GeneralException;
+use App\Repositories\Post\PostContract;
 
 /**
- * Class PostService
- * @package App\Services
+ * Class PostService.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
 class PostService
 {
-
     /**
      * @var PostContract
      */
@@ -20,7 +18,6 @@ class PostService
 
     /**
      * @param PostContract $posts
-     * 
      */
     public function __construct(PostContract $posts)
     {
@@ -28,7 +25,7 @@ class PostService
     }
 
     /**
-     * get all posts
+     * get all posts.
      * @return array
      */
     public function getAllPosts()
@@ -37,7 +34,7 @@ class PostService
     }
 
     /**
-     * get only 5 publish posts
+     * get only 5 publish posts.
      * @return array
      */
     public function getPublishPosts()
@@ -46,7 +43,7 @@ class PostService
     }
 
     /**
-     * get all publish posts
+     * get all publish posts.
      * @return array
      */
     public function getAllPublishPosts()
@@ -55,7 +52,7 @@ class PostService
     }
 
     /**
-     * get count publish posts
+     * get count publish posts.
      * @return int
      */
     public function getPublishPostCount()
@@ -64,7 +61,7 @@ class PostService
     }
 
     /**
-     * get count draft posts
+     * get count draft posts.
      * @return int
      */
     public function getDraftPostCount()
@@ -73,8 +70,8 @@ class PostService
     }
 
     /**
-     * get post by id
-     * @param integer $id
+     * get post by id.
+     * @param int $id
      * @return array
      */
     public function findById($id)
@@ -83,7 +80,6 @@ class PostService
     }
 
     /**
-     *
      * @param array $post
      */
     public function save($post)
@@ -113,5 +109,4 @@ class PostService
     {
         return $this->posts->destroy($id);
     }
-
 }

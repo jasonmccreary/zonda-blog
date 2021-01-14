@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreatePostsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,7 +13,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         // posts table
-        Schema::create('posts', function(Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('author_id')->unsigned()->default(0);
             $table->foreign('author_id')
@@ -38,5 +37,4 @@ class CreatePostsTable extends Migration
         // drop posts table
         Schema::drop('posts');
     }
-
 }

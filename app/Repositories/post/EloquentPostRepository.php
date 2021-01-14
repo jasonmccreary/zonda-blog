@@ -2,18 +2,16 @@
 
 namespace App\Repositories\Post;
 
+use App\Exceptions\GeneralException;
 use App\Models\Post;
 use Auth;
-use App\Exceptions\GeneralException;
 
 /**
- * Class EloquentPostRepository
- * @package App\Repositories\Post
+ * Class EloquentPostRepository.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
 class EloquentPostRepository implements PostContract
 {
-
     /**
      * @param $id
      * @return \Illuminate\Support\Collection|null|static
@@ -23,14 +21,14 @@ class EloquentPostRepository implements PostContract
     {
         $post = Post::find($id);
 
-        if (!is_null($post)) {
+        if (! is_null($post)) {
             return $post;
         }
         throw new GeneralException('That post does not exist.');
     }
 
     /**
-     * get all posts
+     * get all posts.
      * @param string $orderBy
      * @param string $sort
      * @return array
@@ -41,7 +39,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * get only 5 publish posts
+     * get only 5 publish posts.
      * @param string $orderBy
      * @param string $sort
      * @return array
@@ -52,7 +50,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * get all publish posts
+     * get all publish posts.
      * @param string $orderBy
      * @param string $sort
      * @return array
@@ -63,7 +61,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * get count publish posts
+     * get count publish posts.
      * @return int
      */
     public function getPublishPostCount()
@@ -72,7 +70,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * get count draft posts
+     * get count draft posts.
      * @return int
      */
     public function getDraftPostCount()
@@ -81,7 +79,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * create post
+     * create post.
      * @param $input
      */
     public function create($input)
@@ -98,7 +96,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * update post
+     * update post.
      * @param $id
      * @param $input
      */
@@ -116,7 +114,7 @@ class EloquentPostRepository implements PostContract
     }
 
     /**
-     * delete post
+     * delete post.
      * @param $id
      * @return bool
      * @throws GeneralException
@@ -127,7 +125,6 @@ class EloquentPostRepository implements PostContract
         if ($post->delete()) {
             return true;
         }
-        throw new GeneralException("There was a problem deleting this post. Please try again.");
+        throw new GeneralException('There was a problem deleting this post. Please try again.');
     }
-
 }

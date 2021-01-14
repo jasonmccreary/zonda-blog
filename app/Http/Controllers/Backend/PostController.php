@@ -2,42 +2,38 @@
 
 namespace App\Controllers\Backend;
 
-use BaseController,
-    Input,
-    Redirect,
-    Response,
-    Validator,
-    View;
-use App\Services\PostService;
-use Illuminate\Database\QueryException;
 use App\Exceptions\GeneralException;
 use App\Models\Post;
+use App\Services\PostService;
+use BaseController;
+use Illuminate\Database\QueryException;
+use Input;
+use Redirect;
+use Response;
+use Validator;
+use View;
 
 /**
- * Class PostController
- * @package App\Controllers\Backend
+ * Class PostController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
 class PostController extends BaseController
 {
-
     /**
-     * @var $postService
+     * @var
      */
     protected $postService;
 
     /**
      * @param PostService $postService
-
      */
     public function __construct(PostService $postService)
     {
-
         $this->postService = $postService;
     }
 
     /**
-     * Display the post page
+     * Display the post page.
      * @return View
      */
     public function index()
@@ -48,7 +44,7 @@ class PostController extends BaseController
     }
 
     /**
-     * Display the post add page
+     * Display the post add page.
      * @return View
      */
     public function add()
@@ -57,7 +53,7 @@ class PostController extends BaseController
     }
 
     /**
-     * Display the post edit page
+     * Display the post edit page.
      * @return View
      */
     public function edit($id)
@@ -72,12 +68,11 @@ class PostController extends BaseController
     }
 
     /**
-     * Used to store post information
+     * Used to store post information.
      * @return array $response
      */
     public function store()
     {
-
         try {
             $validator = Validator::make(Input::all(), Post::$rules);
             if ($validator->fails()) {
@@ -92,11 +87,12 @@ class PostController extends BaseController
             $response['status'] = \Config::get('constants.ERROR');
             $response['message'] = 'There was a problem due to duplicate post. Please try again.';
         }
+
         return Response::json($response);
     }
 
     /**
-     * Used to update post information
+     * Used to update post information.
      * @return array $response
      */
     public function update()
@@ -118,11 +114,12 @@ class PostController extends BaseController
             $response['status'] = \Config::get('constants.ERROR');
             $response['message'] = $e->getMessage();
         }
+
         return Response::json($response);
     }
 
     /**
-     * Used to delete post information
+     * Used to delete post information.
      * @param $id
      * @return array $response
      */
@@ -136,7 +133,7 @@ class PostController extends BaseController
             $response['status'] = \Config::get('constants.ERROR');
             $response['message'] = 'There was a problem deleting this post. Please try again.';
         }
+
         return Response::json($response);
     }
-
 }

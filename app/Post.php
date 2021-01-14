@@ -7,7 +7,6 @@ namespace App\Models;
  */
 class Post extends \Eloquent
 {
-
     public $timestamps = true;
 
     /**
@@ -22,25 +21,23 @@ class Post extends \Eloquent
      *
      * @var array
      */
-    protected $fillable = array('title', 'body', 'slug', 'author_id');
+    protected $fillable = ['title', 'body', 'slug', 'author_id'];
 
     /**
-     * validation rules
-     *
+     * validation rules.
      */
-    public static $rules = array(
+    public static $rules = [
         'title' => 'required',
         'body' => 'required',
         'slug' => 'required',
-        'active' => 'required'
-    );
+        'active' => 'required',
+    ];
 
     /**
      * Get the author.
      */
     public function Author()
     {
-
         return $this->belongsTo('User', 'author_id');
     }
 
@@ -57,5 +54,4 @@ class Post extends \Eloquent
                 return '<span class="label label-success">Publish</span>';
         }
     }
-
 }

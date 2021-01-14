@@ -2,21 +2,20 @@
 
 namespace App\Controllers\Backend;
 
-use Auth,
-    BaseController,
-    Input,
-    Redirect,
-    View;
+use Auth;
+use BaseController;
+use Input;
+use Redirect;
+use View;
+
 /**
- * Class AuthController
- * @package App\Controllers\Backend
+ * Class AuthController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
 class AuthController extends BaseController
 {
-
     /**
-     * Display the login page
+     * Display the login page.
      * @return View
      */
     public function getLogin()
@@ -25,30 +24,30 @@ class AuthController extends BaseController
     }
 
     /**
-     * Login action
+     * Login action.
      * @return Redirect
      */
     public function postLogin()
     {
-        $credentials = array(
+        $credentials = [
             'email' => Input::get('email'),
-            'password' => Input::get('password')
-        );
+            'password' => Input::get('password'),
+        ];
 
         try {
             if (Auth::attempt($credentials)) {
-                //if successfull redirect the user 
+                //if successfull redirect the user
                 return Redirect::to('dashboard');
             }
             //else send back the login failure message.
-            return Redirect::back()->withInput()->withErrors(array('login' => 'Username or password is invalid!'));
+            return Redirect::back()->withInput()->withErrors(['login' => 'Username or password is invalid!']);
         } catch (\Exception $e) {
-            return Redirect::back()->withInput()->withErrors(array('login' => $e->getMessage()));
+            return Redirect::back()->withInput()->withErrors(['login' => $e->getMessage()]);
         }
     }
 
     /**
-     * Logout action
+     * Logout action.
      * @return Redirect
      */
     public function getLogout()
@@ -57,5 +56,4 @@ class AuthController extends BaseController
 
         return Redirect::route('login');
     }
-
 }

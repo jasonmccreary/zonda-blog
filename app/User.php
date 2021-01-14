@@ -1,13 +1,12 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserTrait;
 
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
-
     use UserTrait,
         RemindableTrait;
 
@@ -23,13 +22,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      *
      * @var array
      */
-    protected $hidden = array('password');
+    protected $hidden = ['password'];
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = array('email', 'password', 'name');
-
+    protected $fillable = ['email', 'password', 'name'];
 }

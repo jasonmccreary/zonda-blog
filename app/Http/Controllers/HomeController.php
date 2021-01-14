@@ -2,37 +2,33 @@
 
 namespace App\Controllers;
 
-use View,
-    Redirect,
-    BaseController;
-use App\Services\PostService;
 use App\Exceptions\GeneralException;
+use App\Services\PostService;
+use BaseController;
+use Redirect;
+use View;
 
 /**
- * Class HomeController
- * @package App\Controllers
+ * Class HomeController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
 class HomeController extends BaseController
 {
-
     /**
-     * @var $postService
+     * @var
      */
     protected $postService;
 
     /**
      * @param PostService $postService
-
      */
     public function __construct(PostService $postService)
     {
-
         $this->postService = $postService;
     }
 
     /**
-     * Display the blog list
+     * Display the blog list.
      * @return View
      */
     public function index()
@@ -41,7 +37,7 @@ class HomeController extends BaseController
     }
 
     /**
-     * Display the post detail
+     * Display the post detail.
      * @return View
      */
     public function detail($id)
@@ -54,12 +50,11 @@ class HomeController extends BaseController
     }
 
     /**
-     * Display the all post
+     * Display the all post.
      * @return View
      */
     public function all()
     {
         return View::make('frontend.blog-all')->with('posts', $this->postService->getAllPublishPosts());
     }
-
 }
