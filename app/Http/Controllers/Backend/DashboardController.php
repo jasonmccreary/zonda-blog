@@ -2,19 +2,18 @@
 
 namespace App\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Services\PostService;
 use Auth;
 use BaseController;
 use Form;
 use Input;
 use Redirect;
-use View;
-
 /**
  * Class DashboardController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-use App\Http\Controllers\Controller;
+use View;
 
 class DashboardController extends Controller
 {

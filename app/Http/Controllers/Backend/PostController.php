@@ -3,6 +3,7 @@
 namespace App\Controllers\Backend;
 
 use App\Exceptions\GeneralException;
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Services\PostService;
 use BaseController;
@@ -11,13 +12,11 @@ use Input;
 use Redirect;
 use Response;
 use Validator;
-use View;
-
 /**
  * Class PostController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-use App\Http\Controllers\Controller;
+use View;
 
 class PostController extends Controller
 {

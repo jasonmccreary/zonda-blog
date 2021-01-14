@@ -2,17 +2,16 @@
 
 namespace App\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use Auth;
 use BaseController;
 use Input;
 use Redirect;
-use View;
-
 /**
  * Class AuthController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-use App\Http\Controllers\Controller;
+use View;
 
 class AuthController extends Controller
 {
