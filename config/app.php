@@ -169,7 +169,6 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Bus' => 'Illuminate\Support\Facades\Bus',
-        'Inspiring' => 'Illuminate\Foundation\Inspiring',
         'Storage' => 'Illuminate\Support\Facades\Storage',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
