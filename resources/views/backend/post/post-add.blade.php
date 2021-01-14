@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label for="title" class="control-label col-xs-3">Title</label>
                             <div class="col-xs-9">
-                                <?php echo Form::text('title', '', array('id' => 'title', 'class' => 'form-control', 'placeholder' => 'Title')); ?>
+                                <?php echo Form::text('title', '', ['id' => 'title', 'class' => 'form-control', 'placeholder' => 'Title']); ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <label for="slug" class="control-label col-xs-3">Slug</label>
                             <div class="col-xs-9">
-                                <?php echo Form::text('slug', '', array('id' => 'slug', 'class' => 'form-control', 'placeholder' => 'Slug')); ?>
+                                <?php echo Form::text('slug', '', ['id' => 'slug', 'class' => 'form-control', 'placeholder' => 'Slug']); ?>
                             </div>
                         </div>
                         <div class="form-group">
