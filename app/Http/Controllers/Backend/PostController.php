@@ -17,7 +17,9 @@ use View;
  * Class PostController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-class PostController extends BaseController
+use App\Http\Controllers\Controller;
+
+class PostController extends Controller
 {
     /**
      * @var

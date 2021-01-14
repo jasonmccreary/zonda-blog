@@ -14,7 +14,9 @@ use View;
  * Class DashboardController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-class DashboardController extends BaseController
+use App\Http\Controllers\Controller;
+
+class DashboardController extends Controller
 {
     /**
      * @var

@@ -12,7 +12,7 @@ use View;
  * Class HomeController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-class HomeController extends BaseController
+class HomeController extends Controller
 {
     /**
      * @var

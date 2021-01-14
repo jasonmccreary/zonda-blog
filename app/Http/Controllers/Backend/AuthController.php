@@ -12,7 +12,9 @@ use View;
  * Class AuthController.
  * @author Krishna Prasad Timilsina <bikranshu.t@gmail.com>
  */
-class AuthController extends BaseController
+use App\Http\Controllers\Controller;
+
+class AuthController extends Controller
 {
     /**
      * Display the login page.
