@@ -11,12 +11,12 @@
   |
  */
 
-ClassLoader::addDirectories(array(
-    app_path() . '/commands',
-    app_path() . '/controllers',
-    app_path() . '/models',
-    app_path() . '/database/seeds',
-));
+ClassLoader::addDirectories([
+    app_path().'/commands',
+    app_path().'/controllers',
+    app_path().'/models',
+    app_path().'/database/seeds',
+]);
 
 /*
   |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ ClassLoader::addDirectories(array(
   |
  */
 
-Log::useFiles(storage_path() . '/logs/laravel.log');
+Log::useFiles(storage_path().'/logs/laravel.log');
 
 /*
   |--------------------------------------------------------------------------
@@ -44,15 +44,14 @@ Log::useFiles(storage_path() . '/logs/laravel.log');
   |
  */
 
-App::error(function(Exception $exception, $code) {
+App::error(function (Exception $exception, $code) {
     Log::error($exception);
 });
 
-
-App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+App::error(function (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
     return Response::make('Not Found', 404);
 });
-App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
+App::error(function (Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
     return Response::make('Not Found', 404);
 });
 
@@ -67,8 +66,8 @@ App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException
   |
  */
 
-App::down(function() {
-    return Response::make("Be right back!", 503);
+App::down(function () {
+    return Response::make('Be right back!', 503);
 });
 
 /*
@@ -82,4 +81,4 @@ App::down(function() {
   |
  */
 
-require app_path() . '/filters.php';
+require app_path().'/filters.php';
