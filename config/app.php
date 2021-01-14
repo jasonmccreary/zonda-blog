@@ -83,6 +83,7 @@ return [
      */
     'providers' => [
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
