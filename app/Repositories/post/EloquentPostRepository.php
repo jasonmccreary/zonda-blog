@@ -46,7 +46,7 @@ class EloquentPostRepository implements PostContract
      */
     public function getPublishPosts($orderBy = 'created_at', $sort = 'desc')
     {
-        return Post::where('active', \Config::get('constants.PUBLISH_STATUS'))->orderBy($orderBy, $sort)->take(5)->get();
+        return Post::where('active', config('constants.PUBLISH_STATUS'))->orderBy($orderBy, $sort)->take(5)->get();
     }
 
     /**
@@ -57,7 +57,7 @@ class EloquentPostRepository implements PostContract
      */
     public function getAllPublishPosts($orderBy = 'created_at', $sort = 'desc')
     {
-        return Post::where('active', \Config::get('constants.PUBLISH_STATUS'))->orderBy($orderBy, $sort)->get();
+        return Post::where('active', config('constants.PUBLISH_STATUS'))->orderBy($orderBy, $sort)->get();
     }
 
     /**
@@ -66,7 +66,7 @@ class EloquentPostRepository implements PostContract
      */
     public function getPublishPostCount()
     {
-        return Post::where('active', \Config::get('constants.PUBLISH_STATUS'))->get()->count();
+        return Post::where('active', config('constants.PUBLISH_STATUS'))->get()->count();
     }
 
     /**
@@ -75,7 +75,7 @@ class EloquentPostRepository implements PostContract
      */
     public function getDraftPostCount()
     {
-        return Post::where('active', \Config::get('constants.DRAFT_STATUS'))->get()->count();
+        return Post::where('active', config('constants.DRAFT_STATUS'))->get()->count();
     }
 
     /**

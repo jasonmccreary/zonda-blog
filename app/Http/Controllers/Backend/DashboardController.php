@@ -37,7 +37,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return View::make('backend.dashboard.dashboard')->with([
+        return view('backend.dashboard.dashboard')->with([
                         'totalCount'=> count($this->postService->getAllPosts()),
                         'publishCount'=> $this->postService->getPublishPostCount(),
                         'draftCount'=> $this->postService->getDraftPostCount(),

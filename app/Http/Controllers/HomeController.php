@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return View::make('frontend.blog')->with('posts', $this->postService->getPublishPosts());
+        return view('frontend.blog')->with('posts', $this->postService->getPublishPosts());
     }
 
     /**
@@ -43,9 +43,9 @@ class HomeController extends Controller
     public function detail($id)
     {
         try {
-            return View::make('frontend.blog-detail')->with('post', $this->postService->findById($id));
+            return view('frontend.blog-detail')->with('post', $this->postService->findById($id));
         } catch (GeneralException $e) {
-            return Redirect::to('/');
+            return redirect('/');
         }
     }
 
@@ -55,6 +55,6 @@ class HomeController extends Controller
      */
     public function all()
     {
-        return View::make('frontend.blog-all')->with('posts', $this->postService->getAllPublishPosts());
+        return view('frontend.blog-all')->with('posts', $this->postService->getAllPublishPosts());
     }
 }

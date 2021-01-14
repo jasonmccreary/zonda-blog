@@ -22,7 +22,7 @@ class AuthController extends Controller
      */
     public function getLogin()
     {
-        return View::make('backend.auth.login');
+        return view('backend.auth.login');
     }
 
     /**
@@ -39,7 +39,7 @@ class AuthController extends Controller
         try {
             if (Auth::attempt($credentials)) {
                 //if successfull redirect the user
-                return Redirect::to('dashboard');
+                return redirect('dashboard');
             }
             //else send back the login failure message.
             return Redirect::back()->withInput()->withErrors(['login' => 'Username or password is invalid!']);

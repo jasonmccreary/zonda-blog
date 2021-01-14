@@ -40,7 +40,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return View::make('backend.post.post')->with(
+        return view('backend.post.post')->with(
                         'posts', $this->postService->getAllPosts()
         );
     }
@@ -51,7 +51,7 @@ class PostController extends Controller
      */
     public function add()
     {
-        return View::make('backend.post.post-add');
+        return view('backend.post.post-add');
     }
 
     /**
@@ -61,11 +61,11 @@ class PostController extends Controller
     public function edit($id)
     {
         try {
-            return View::make('backend.post.post-edit')->with(
+            return view('backend.post.post-edit')->with(
                             'post', $this->postService->findById($id)
             );
         } catch (GeneralException $e) {
-            return Redirect::to('post');
+            return redirect('post');
         }
     }
 
@@ -78,15 +78,15 @@ class PostController extends Controller
         try {
             $validator = Validator::make(Input::all(), Post::$rules);
             if ($validator->fails()) {
-                $response['status'] = \Config::get('constants.ERROR');
+                $response['status'] = config('constants.ERROR');
                 $response['message'] = 'Please fill the required field.';
             } else {
                 $this->postService->save(Input::all());
-                $response['status'] = \Config::get('constants.SUCCESS');
+                $response['status'] = config('constants.SUCCESS');
                 $response['message'] = 'Post saved successfully.';
             }
         } catch (QueryException $e) {
-            $response['status'] = \Config::get('constants.ERROR');
+            $response['status'] = config('constants.ERROR');
             $response['message'] = 'There was a problem due to duplicate post. Please try again.';
         }
 
@@ -102,18 +102,18 @@ class PostController extends Controller
         try {
             $validator = Validator::make(Input::all(), Post::$rules);
             if ($validator->fails()) {
-                $response['status'] = \Config::get('constants.ERROR');
+                $response['status'] = config('constants.ERROR');
                 $response['message'] = 'Please fill the required field.';
             } else {
                 $this->postService->update(Input::all());
-                $response['status'] = \Config::get('constants.SUCCESS');
+                $response['status'] = config('constants.SUCCESS');
                 $response['message'] = 'Post updated successfully.';
             }
         } catch (QueryException $e) {
-            $response['status'] = \Config::get('constants.ERROR');
+            $response['status'] = config('constants.ERROR');
             $response['message'] = 'There was a problem due to duplicate post. Please try again.';
         } catch (GeneralException $e) {
-            $response['status'] = \Config::get('constants.ERROR');
+            $response['status'] = config('constants.ERROR');
             $response['message'] = $e->getMessage();
         }
 
@@ -129,10 +129,10 @@ class PostController extends Controller
     {
         try {
             $this->postService->destroy($id);
-            $response['status'] = \Config::get('constants.SUCCESS');
+            $response['status'] = config('constants.SUCCESS');
             $response['message'] = 'Post deleted successfully.';
         } catch (GeneralException $e) {
-            $response['status'] = \Config::get('constants.ERROR');
+            $response['status'] = config('constants.ERROR');
             $response['message'] = 'There was a problem deleting this post. Please try again.';
         }
 
