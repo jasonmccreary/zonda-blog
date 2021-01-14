@@ -5,7 +5,7 @@ namespace App\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Auth;
 use BaseController;
-use Input;
+use Illuminate\Support\Facades\Request;
 use Redirect;
 /**
  * Class AuthController.
@@ -31,8 +31,8 @@ class AuthController extends Controller
     public function postLogin()
     {
         $credentials = [
-            'email' => Input::get('email'),
-            'password' => Input::get('password'),
+            'email' => Request::get('email'),
+            'password' => Request::get('password'),
         ];
 
         try {

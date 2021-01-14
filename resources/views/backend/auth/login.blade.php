@@ -30,7 +30,7 @@
                 @endif
                 {!! Form::open(['url' => 'auth/login', 'role' => 'form']) !!}
                 <div class="form-group has-feedback">
-                    {!! Form::text('email', Input::old('email'), ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+                    {!! Form::text('email', Request::old('email'), ['class' => 'form-control', 'placeholder' => 'Email']) !!}
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

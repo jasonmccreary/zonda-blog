@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'env' => env('APP_ENV', 'production'),
+
     /*
       |--------------------------------------------------------------------------
       | Application Debug Mode
@@ -15,6 +18,8 @@ return [
     'debug' => false,
 
     'log' => 'daily',
+
+        'log_level' => env('APP_LOG_LEVEL', 'debug'),
     /*
       |--------------------------------------------------------------------------
       | Application URL
@@ -82,12 +87,10 @@ return [
       |
      */
     'providers' => [
-        'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
-        'Illuminate\Routing\ControllerServiceProvider',
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
@@ -150,7 +153,6 @@ return [
         'Event' => 'Illuminate\Support\Facades\Event',
         'File' => 'Illuminate\Support\Facades\File',
         'Hash' => 'Illuminate\Support\Facades\Hash',
-        'Input' => 'Illuminate\Support\Facades\Input',
         'Lang' => 'Illuminate\Support\Facades\Lang',
         'Log' => 'Illuminate\Support\Facades\Log',
         'Mail' => 'Illuminate\Support\Facades\Mail',
@@ -166,7 +168,6 @@ return [
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
-        'Bus' => 'Illuminate\Support\Facades\Bus',
         'Storage' => 'Illuminate\Support\Facades\Storage',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
