@@ -83,6 +83,7 @@ return [
      */
     'providers' => [
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
@@ -109,11 +110,10 @@ return [
         'Illuminate\Pipeline\PipelineServiceProvider',
         'Illuminate\Auth\Passwords\PasswordResetServiceProvider',
         'Collective\Html\HtmlServiceProvider',
-        'App\Providers\AppServiceProvider',
-        'App\Providers\BusServiceProvider',
-        'App\Providers\ConfigServiceProvider',
-        'App\Providers\EventServiceProvider',
-        'App\Providers\RouteServiceProvider',
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -167,7 +167,6 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Bus' => 'Illuminate\Support\Facades\Bus',
-        'Inspiring' => 'Illuminate\Foundation\Inspiring',
         'Storage' => 'Illuminate\Support\Facades\Storage',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
